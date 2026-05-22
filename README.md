@@ -4,4 +4,26 @@ This repository stores Alphafold 3 models of NOS reductase domain (UniProt entry
 
     Mammals produce cyclo-octasulfur to suppress lipid peroxidation and ferroptosis
 
-    By: Uladzimir Barayeu, Seiryo Ogata, Tsuyoshi Takata, Minkyung Jung, Tetsuro Matsunaga, Mike Lange, Masanobu Morita, Yuka Unno, Saber Boushehri, Paulius Greicius, Tomoaki Ida, Akira Nishimura, Lorenzo Catti, Yuexuan Pan, Tianli Zhang, Takayuki Shimizu, Ryo Ushioda, Takakazu Nakabayashi, Seji Asamitsu, Kazuki Fusegawa, Takashi Suzuki, Takanori Ishida, Naoko Tanda, Yasuo Watanabe, Ryo Yamaguchi, Shintaro Noguchi, Eikan Mishima, Fumiko Yano, Mieko Arisawa, Albert van der Vliet, Dennis Stuehr, Ning Xia, Huige Li, Bernd Moosmann, Frauke Gräter, Camilo Aponte-Santamaría, James A. Olzmann, Marcus Conrad, Tobias P. Dick, Hozumi Motohashi, Michito Yoshizawa, Takaaki Akaike
+    By: Uladzimir Barayeu, Seiryo Ogata, Tsuyoshi Takata, Minkyung Jung, Tetsuro Matsunaga, Mike Lange, Masanobu Morita,
+    Yuka Unno, Saber Boushehri, Paulius Greicius, Tomoaki Ida, Akira Nishimura, Lorenzo Catti, Yuexuan Pan, Tianli Zhang,
+    Takayuki Shimizu, Ryo Ushioda, Takakazu Nakabayashi, Seji Asamitsu, Kazuki Fusegawa, Takashi Suzuki, Takanori Ishida,
+    Naoko Tanda, Yasuo Watanabe, Ryo Yamaguchi, Shintaro Noguchi, Eikan Mishima, Fumiko Yano, Mieko Arisawa,
+    Albert van der Vliet, Dennis Stuehr, Ning Xia, Huige Li, Bernd Moosmann, Frauke Gräter, Camilo Aponte-Santamaría,
+    James A. Olzmann, Marcus Conrad, Tobias P. Dick, Hozumi Motohashi, Michito Yoshizawa, Takaaki Akaike
+
+To identify hypothetical conformations that would enable electron transfer between FADH2 and GSSSG we predicted RedD domain in complex with FMN, FADH2, GSSSG and BH4 in AlphaFold 3 using 100 seeds and sampling 5 conformations per seed. See ENOS.json file for AF3 input to generate these models.
+
+Since global AF3 confidence metrics might obscure local issues with the model, we focused on predicted alignment error (PAE) between central sulfur atom on glutathionine and C atom of the methyl group which is part of the FADH2 isoalloxazine ring. We extracted top 5 models with lowest PAE between these two atoms. Among the resulting conformations, PAE ranged between 5 A and 5.1 A, ipTM score - between 0.88 and 0.91 and pTM - between 0.89 and 0.90. One of these poses is shown in Figure XX colored by per atom pLDDT score (A) or with different cofactors highlighted (B), inlets - zoom on the cofactors (red rectangle).
+
+
+
+The distogrms of htese seeds are availbale in folder distograms.
+
+Among the resulting conformations, PAE ranged between 5 A and 5.1 A, ipTM score - between 0.88 and 0.91 and pTM - between 0.89 and 0.90. One of these poses is shown in Figure XX colored by per atom pLDDT score (A) or with different cofactors highlighted (B), inlets - zoom on the cofactors (red rectangle).
+
+To get more insights into possible distances between GSSSG and FADH2, we also explored their AF3 distograms in the seeds which generated models with lowest PAE. Figure C shows the cumulative probability distributions of the distance between central sulfur atom on GSSSG and C atom of the methyl group which is part of the FADH2 isoalloxazine ring. The representative snapshots above the graph were conformations sampled from seed 17, distance between the two atoms is labeled in red in Armstrongs.
+
+This analysis generated conformations where the cofactors are at a low eough distance to enable direct electron transfer from FADH2 to GSSSG. However, short distance was not always observed in AF3 predictions. Consistently, cumulative probability densities also indicate that longer distances may be possible. Therefore, we evaluated whether in such conformations an indirect electron transfer via aromatic amino acid side chains would be possible. Figure D shows a snapshot where the distance between cofactors was at 18.9 A as well as aromatic residues in the viscinity.
+
+Description of files:
+ - ENOS.json - AlphaFold 3 input JSON file to generate the complex using 100 seeds.
