@@ -11,13 +11,12 @@ This repository stores Alphafold 3 models of NOS reductase domain (UniProt entry
     Albert van der Vliet, Dennis Stuehr, Ning Xia, Huige Li, Bernd Moosmann, Frauke Gräter, Camilo Aponte-Santamaría,
     James A. Olzmann, Marcus Conrad, Tobias P. Dick, Hozumi Motohashi, Michito Yoshizawa, Takaaki Akaike
 
-To identify hypothetical conformations that would enable electron transfer between FADH2 and GSSSG we predicted RedD domain in complex with FMN, FADH2, GSSSG and BH4 in AlphaFold 3 using 100 seeds and sampling 5 conformations per seed. See ENOS.json file for AF3 input to generate these models.
+To identify hypothetical conformations that would enable electron transfer between FADH2 and GSSSG we predicted RedD domain in complex with FMN, FADH2, GSSSG and BH4 in AlphaFold 3 using 100 seeds and sampling 5 conformations per seed. See **ENOS.json** file for AF3 input to generate these models.
 
-Since global AF3 confidence metrics might obscure local issues with the model, we focused on predicted alignment error (PAE) between central sulfur atom on glutathionine and C atom of the methyl group which is part of the FADH2 isoalloxazine ring. We extracted top 5 models with lowest PAE between these two atoms. Among the resulting conformations, PAE ranged between 5 A and 5.1 A, ipTM score - between 0.88 and 0.91 and pTM - between 0.89 and 0.90. One of these poses is shown in Figure XX colored by per atom pLDDT score (A) or with different cofactors highlighted (B), inlets - zoom on the cofactors (red rectangle).
+Since global AF3 confidence metrics might obscure local issues with the model, we focused on predicted alignment error (PAE) between central sulfur atom on glutathionine and C atom of the methyl group which is part of the FADH2 isoalloxazine ring. We extracted top 5 models with lowest PAE between these two atoms. Among the resulting conformations, PAE ranged between 5 A and 5.1 A, ipTM score - between 0.88 and 0.91 and pTM - between 0.89 and 0.90. The AF3 output of these 5 models is uploaded in folder **best_pae** and the respective distograms in folder **best_pae_distograms**.
 
 
-
-The distogrms of htese seeds are availbale in folder distograms.
+One of these poses is shown in Figure XX colored by per atom pLDDT score (A) or with different cofactors highlighted (B), inlets - zoom on the cofactors (red rectangle).
 
 Among the resulting conformations, PAE ranged between 5 A and 5.1 A, ipTM score - between 0.88 and 0.91 and pTM - between 0.89 and 0.90. One of these poses is shown in Figure XX colored by per atom pLDDT score (A) or with different cofactors highlighted (B), inlets - zoom on the cofactors (red rectangle).
 
